@@ -14,13 +14,16 @@ Adding API methods so that additional JSONata functions could be added.
 
 ## Details
 
+### API Changes ###
+
 * `RED.util.registerJSONataFunction (name, function, signature="", snipt="")`
 * `RED.util.removeJSONataFunction (name)`
 * `RED.util.getJSONataFunctions()`  returns array of objects that have the functions and the meta-data for the functions for use in JSONata expressions
 
+### Other Changes ###
+
 prepareJSONataExpression would have to be updated to call getJSONataFunctions (or maybe a helper function). Ideally the expr.assign and expr.registerFunction function calls in prepareJSONataExpression would be removed and registerJSONataFunction would be called for flowContext, globalContext, env & clone
 
- 
 ### UI Changes ###
 There should be no visible UI changs unless the registerJSONataFunction API method is called. In that case the new function should show up in the Snipts provided in the JSONata editor. 
 
