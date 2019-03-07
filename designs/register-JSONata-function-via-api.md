@@ -6,7 +6,7 @@ state: draft
 
 ## Summary
 
-Adding an API so that additional JSONata functions could be added would make good extension point. 
+Adding API methods so that additional JSONata functions could be added. 
 
 ## Authors
 
@@ -14,13 +14,11 @@ Adding an API so that additional JSONata functions could be added would make goo
 
 ## Details
 
-This section provides the detailed information for the proposal. This template
-does not provide a structure for this section, but it should address:
+* `RED.util.registerJSONataFunction (name, function, signature="", snipt="")`
+* `RED.util.removeJSONataFunction (name)`
+* `RED.util.getJSONataFunctions()`  returns array of objects that have the functions and the meta-data for the functions for use in JSONata expressions
 
- 1. any public APIs it introduces
- 2. the user experience of the feature - what it does and how it is used
- 3. any migration concerns
- 4. mock-up UI designs
+prepareJSONataExpression would have to be updated to call getJSONataFunctions (or maybe a helper function). Ideally the expr.assign and expr.registerFunction function calls in prepareJSONataExpression would be removed and registerJSONataFunction would be called for flowContext, globalContext, env & clone
 
  
 ### UI Changes ###
