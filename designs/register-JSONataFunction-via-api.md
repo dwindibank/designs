@@ -34,7 +34,7 @@ editor-client/src/vendor/jsonata/formatter.js
 
 #### Other ####
 
-* The structre used in jsonata.functions (jsonata/formatter.js) is not clear and shold be documented somewhere, this is different from 
+* The structre used in jsonata.functions (jsonata/formatter.js) is not clear and shold be documented somewhere. The structure used here this is different from the JSONata sig as per: http://docs.jsonata.org/embedding-extending#function-signature-syntax
 * Add a cookbook example?
 
 The discussion on the initial PR will provide guidance on what further material
