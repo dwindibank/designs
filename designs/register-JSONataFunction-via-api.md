@@ -30,7 +30,7 @@ editor-client/src/vendor/jsonata/formatter.js
 
 ### Documentation Impacts ### 
 
-* New API methods will be documented so that API docs can be generated (@node-red_util.html)
+* New API methods will be documented so that API docs can be generated (e.g. @node-red_util.html https://nodered.org/docs/api/modules/v/0.20.0/@node-red_util.html)
 
 #### Other ####
 
