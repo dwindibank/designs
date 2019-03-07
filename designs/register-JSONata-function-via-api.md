@@ -16,10 +16,20 @@ Adding API methods so that additional JSONata functions could be added.
 
 ### API Changes ###
 
+New API Methods:
+
 * `RED.util.registerJSONataFunction (name, function, signature="", snipt="")`
 * `RED.util.removeJSONataFunction (name)`
 * `RED.util.getJSONataFunctions()`  returns array of objects that have the functions and the meta-data for the functions for use in JSONata expressions
 
+### Usuage ### 
+
+### Example ###
+
+`
+RED.util.registerJSONataFunction ("Greet", , signature="", snipt="") 
+
+`
 ### Other Changes ###
 
 prepareJSONataExpression would have to be updated to call getJSONataFunctions (or maybe a helper function). Ideally the expr.assign and expr.registerFunction function calls in prepareJSONataExpression would be removed and registerJSONataFunction would be called for flowContext, globalContext, env & clone
@@ -27,7 +37,7 @@ prepareJSONataExpression would have to be updated to call getJSONataFunctions (o
 ### UI Changes ###
 There should be no visible UI changs unless the registerJSONataFunction API method is called. In that case the new function should show up in the Snipts provided in the JSONata editor. 
 
-editor-client/src/vendor/jsonata/formatter.js
+Make changes to editor-client/src/vendor/jsonata/formatter.js to call some sort of new HTTP method that wraps the new RED.util.getJSONataFunctions(), so any registered JSONata function is visible in the editor
 
 ### Documentation Impacts ### 
 
@@ -40,6 +50,12 @@ editor-client/src/vendor/jsonata/formatter.js
 
 The discussion on the initial PR will provide guidance on what further material
 is needed.
+
+## Implementation
+
+Proposal: implement this in two parts (pull requests):
+1. Add new API methods to RED.util
+2. Call new http method to get the listing of JSONata functions from the JSONata editor
 
 ## Ref
 
