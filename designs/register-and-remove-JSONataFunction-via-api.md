@@ -10,7 +10,7 @@ Adding an API so that additional JSONata functions could be added would make goo
 
 ## Authors
 
- - @dustinw (node-red forum) / dwindibank (github)
+ - @dustinw (node-red forum) / @dwindibank (github)
 
 ## Details
 
