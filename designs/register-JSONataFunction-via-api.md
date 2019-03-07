@@ -2,7 +2,7 @@
 state: draft
 ---
 
-# Register and Remove JSONata fucntions via API
+# Register and Remove JSONata functions via API
 
 ## Summary
 
@@ -22,10 +22,25 @@ does not provide a structure for this section, but it should address:
  3. any migration concerns
  4. mock-up UI designs
 
+ 
+### UI Changes ###
+There should be no visible UI changs unless the registerJSONataFunction API method is called. In that case the new function should show up in the Snipts provided in the JSONata editor. 
+
+editor-client/src/vendor/jsonata/formatter.js
+
+### Documentation Impacts ### 
+
+* New API methods will be documented so that API docs can be generated (@node-red_util.html)
+
+#### Other ####
+
+* The structre used in jsonata.functions (jsonata/formatter.js) is not clear and shold be documented somewhere, this is different from 
+* Add a cookbook example?
+
 The discussion on the initial PR will provide guidance on what further material
 is needed.
 
-Ref:
+## Ref
 
 - https://discourse.nodered.org/t/feature-request-register-jsonata-function/7381
 - https://github.com/node-red/node-red/wiki/Design:-Node-module-lifecycle
